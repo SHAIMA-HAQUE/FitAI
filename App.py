@@ -94,7 +94,7 @@ if app_mode == 'About App':
     with kpj2:
 
         st.video(
-            r"C:\Users\HP\OneDrive\Desktop\Fit\AI Trainer\gif.mp4", start_time=0)
+            r"D:\FitAI\AI Trainer\gif.mp4", start_time=0)
 
 
 elif app_mode == 'Fitness Assistant':
@@ -178,7 +178,7 @@ elif app_mode == 'Fitness Assistant':
         img = detector.findPose(img, False)
         lmList = detector.findPosition(img, False)
     # print(lmList)
-        if(lmList != 0):
+        if(len(lmList) > 0):
             angle = detector.findAngle(img, 12, 14, 16)
         per = np.interp(angle, (199, 301), (0, 100))
         bar = np.interp(angle, (199, 301), (650, 100))
